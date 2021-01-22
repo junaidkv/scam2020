@@ -1,0 +1,33 @@
+echo -n "Enter your DOB [dd/mm/yyyy] : "
+read n
+d=`echo $n | cut –c 1-2`
+m=`echo $n | cut –c 4-5`
+y=`echo $n | cut –c 7-10`
+yy=`date +"%Y"`
+mm=`date +"%m"`
+dd=`date +"%d"`
+if [ $y -le $yy ]
+then
+yyy=`expr $yy - $y`
+mmm=`expr $mm - $m`
+#ddd=`expr $dd - $d`
+if [ $m -gt $mm ]
+then
+yyy=`expr $yyy - 1`
+mmm=`expr $mmm + 12`
+fi
+if [ $d -gt $dd ]
+then
+ddd=`expr $d - $dd`
+ddd=`expr 31 - $ddd`
+else
+ddd=`expr $dd - $d`
+fi
+fi
+echo "Your age : $yyy years"
+if [ $yyy -ge 18 ]
+then
+echo "You are eligible to vote"
+else
+echo "You are not eligible to vote"
+fi

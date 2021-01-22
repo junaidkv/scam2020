@@ -1,0 +1,31 @@
+file1=$1
+file2=$2
+file3=$3
+out="output.$$"
+if [ $# -ne 3 ]
+then
+echo "$(basename $0) file1 file2 file3"
+exit 1
+fi
+if [ ! -f $file1 ]
+then
+echo "$file1 not a file!"
+exit 2
+fi
+if [ ! -f $file2 ]
+then
+echo "$file2 not a file!"
+exit 3
+fi
+if [ ! -f $file3 ]
+then
+echo "$file3 not a file!"
+exit 4
+fi
+cat $file1 $file2 $file3 >> $out
+sort $out > shellpg40sort
+echo " Sorted Contents of merged files $file1,$file2,$file3:"
+cat shellpg40sort | more -10
+ls | tail -20 | sort > profile
+echo "Sorted list of last 20 files in the current working directory"
+cat profile

@@ -1,0 +1,20 @@
+i=1
+j=5
+while [ $i -le 5 ]
+do
+echo -e "\n"
+m=1
+while [ $m -lt $j ]
+do
+echo -n " "
+m=`expr $m + 1`
+done
+n=1
+while [ $n -le $i ]
+do
+echo -n "$1 "
+n=`expr $n + 1`
+done
+i=`expr $i + 1`
+j=`expr $j - 1`
+done

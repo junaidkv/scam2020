@@ -1,0 +1,45 @@
+echo "Enter two number"
+read a
+read b
+if [ $a -gt $b ]
+then
+num=$a
+den=$b
+else
+num=$b
+den=$a
+fi
+ch=0
+until [ $ch -eq 3 ]
+do
+echo -e "-----OPERATIONS-----"
+echo -e "1.LCM\n2.GCD\n3.EXIT"
+echo "Enter your choice"
+read ch
+case $ch in
+1) r=`expr $num % $den`
+while [ $r -ne 0 ]
+do
+num=$den
+den=$r
+r=`expr $num % $den`
+done
+gcd=$den
+lcm=`expr $a \* $b / $gcd`
+echo " The LCM of $a and $b is : $lcm";;
+2) r=`expr $num % $den`
+while [ $r -ne 0 ]
+do
+num=$den
+den=$r
+r=`expr $num % $den`
+done
+LINUX LAB
+52
+gcd=$den
+lcm=`expr $a \* $b / $gcd`
+echo " The GCD of $a and $b is : $gcd";;
+3) exit;;
+*) echo "Enter valid option";;
+esac
+done

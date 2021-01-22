@@ -1,0 +1,10 @@
+file=$1
+if [ $# -ne 1 ]
+then
+echo "Enter the file name as command"
+else
+head -1 $file>sfile
+sed 1d $file|sort -k3,3 -k2,2 >>sfile
+echo "successfully"
+cat sfile
+fi

@@ -1,0 +1,8 @@
+for i in "$@" 
+do
+d=$d`echo $1/` 
+shift
+echo "Dir "$d
+done
+d="mkdir -p $d"
+$d

@@ -1,0 +1,10 @@
+ls>f
+exec<f
+while read line
+do
+if [ -f $line ]
+then
+ fn="${line%.*}"
+ mv $line testing/$fn.$$
+fi
+done

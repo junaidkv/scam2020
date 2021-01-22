@@ -1,0 +1,26 @@
+echo "Enter the file name: "
+read f1
+echo "-----operations on file-----"
+echo -e "1. enter 5 names in a file\n2. sort the names in the existing file\n3. list sorted and
+unsorted file\n4. quit"
+read ans
+case $ans in
+1)
+echo "Enter 5 names and press ^d at the end: "
+cat >$f1
+;;
+2)
+sort $f1 >sortfile
+echo -e "\nSorted list: "
+cat sortfile
+;;
+3)
+sort $f1 >sortfile
+echo -e "\nSorted list: "
+cat sortfile
+echo -e "\nunsorted list: "
+cat $f1
+;;
+4) exit ;;
+*) echo "Enter valid option"
+esac

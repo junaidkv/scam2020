@@ -1,0 +1,32 @@
+echo -e "----operation on----\n1. RECTANGLE \n2. CIRCLE"
+read op1
+case $op1 in
+1) echo "Enter the length and breadth: "
+read len
+read bre
+echo -e "---Find---\n1. AREA \n2. PERIMETER"
+read op2
+case $op2 in
+1) ans=`expr $len \* $bre`
+echo "The area of the rectangle is: $ans" ;;
+2) ans=`expr 2 \* \( $len + $bre \)`
+echo "The perimeter of the rectangle is: $ans" ;;
+*) echo "Enter valid option" ;;
+esac
+;;
+2) echo "Enter the radius of circle: "
+read rai
+echo -e "---Find---\n1. AREA \n2. CIRCUMFERENCE"
+read op2
+case $op2 in
+1) ans=`echo "3.14 * $rai * $rai" | bc`
+echo "The are of the circle: $ans" ;;
+2) ans=`echo "2 * 3.14 * $rai" | bc`
+echo "The circumference of the circle: $ans" ;;
+*) echo "Enter valid option"
+;;
+esac
+;;
+*) echo "Enter valid option"
+;;
+esac

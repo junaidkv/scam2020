@@ -1,0 +1,11 @@
+echo "Enter tany string: "
+function is_int()
+{ return $(test "$@" -eq "$@" > /dev/null 2>&1);
+}
+read input
+if $(is_int " ${input}")
+then
+echo "TRUE"
+else
+echo "FALSE"
+fi

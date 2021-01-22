@@ -1,0 +1,12 @@
+echo Enter a seven digit number: 
+read n
+x=0 
+d=1000000
+while [ $x -lt 4 ] 
+do
+q=`echo "scale=0;$n/$d"|bc` 
+m=`echo "scale=0;$q%10"|bc` 
+echo $m
+d=`echo "scale=0;$d/100"|bc` 
+x=`echo "scale=0;$x+1"|bc` 
+done

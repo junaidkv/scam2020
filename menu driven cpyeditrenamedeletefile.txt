@@ -1,0 +1,46 @@
+echo "-----operations on a file-----"
+echo -e "1. copy\n2. edit\n3. rename\n4. delete"
+read ans
+case $ans in
+1) echo "Enter the source file: "
+read f1
+echo "Enter the destination file: "
+read f2
+if test -e $f1
+then
+cp $f1 $f2
+echo "COPY DONE"
+else
+echo "The source file does not exist"
+fi
+;;
+2) echo "Enter the file you want to edit: "
+read f1
+vi $f1
+;;
+3) echo "Enter the file name: "
+read f1
+echo "Enter the new name: "
+read f2
+if test -e $f1
+then
+mv $f1 $f2
+echo "RENAMED"
+else
+echo "The file does not exists"
+fi
+;;
+4) echo "Enter the file name: "
+read f1
+if test -e $f1
+then
+LINUX LAB
+41
+rm $f1
+echo "DELETED"
+else
+echo "The file does not exists"
+fi
+;;
+*) echo "Enter valid option"
+Esac

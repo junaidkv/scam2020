@@ -1,0 +1,15 @@
+echo "Enter the source file name:"
+read f1
+echo "Enter the destination file name:"s
+read f2
+echo "Contents of source file"
+cat $f1
+if [ -f $f1 ]
+then
+cp $f1 $f2
+echo "Copied Successfully"
+echo "Contents of Destination file"
+cat $f2
+else
+echo "Error!! $f1 File doesnot exists"
+fi

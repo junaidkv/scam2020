@@ -1,0 +1,8 @@
+n=1
+pro=1
+while [ $n -le $1 ]
+do
+pro=`expr $pro \* $n`
+n=`expr $n + 1`
+done
+echo "The factorial of $1 : $pro"

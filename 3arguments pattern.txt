@@ -1,0 +1,16 @@
+if test $# -ne 3
+then
+ echo "invalid number of arguments. Please enter 3 argument."
+else
+ echo -e "The content of the file: "
+ cat $2
+ a=`grep -o $1 $2 | wc -w`
+ if [ $a -gt0 ]
+ then
+ echo "Pattern found !!!" | cat > $3
+ cat $3
+ else
+ echo "Pattern not found !!!" | cat > $3
+ cat $3
+ fi
+fi

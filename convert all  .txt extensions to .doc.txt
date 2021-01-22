@@ -1,0 +1,8 @@
+for files in *.txt
+do
+fname=`basename $files .txt`
+echo $fname
+mv $files $fname.doc
+done
+echo "Successfully Converted .txt files to .doc,Files in .doc files are"
+ls *.doc

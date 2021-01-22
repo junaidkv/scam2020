@@ -1,0 +1,10 @@
+echo "Enter distance between (in km) :" 
+read km
+meter=`echo $km \* 1000 | bc` 
+feet=`echo $meter \* 3.2808 | bc`
+inches=`echo $feet \* 12 | bc` 
+cm=`echo $feet \* 30.48 | bc` 
+echo "Total meter : " $meter 
+echo "Total feet : " $feet
+echo "Total inches : " $inches 
+echo "Total cm : " $cm

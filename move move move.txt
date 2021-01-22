@@ -1,0 +1,12 @@
+mv *.c cprograms
+echo "Files in the cprograms directory"
+ls cprograms
+mv *.txt textfiles
+echo "Files in textfiles directory"
+ls textfiles
+mv *.sh shellprograms
+echo "Files in shellprograms directory"
+ls shellprograms
+mv *.java javaprograms
+echo "Files in javaprograms directory"
+ls javaprograms

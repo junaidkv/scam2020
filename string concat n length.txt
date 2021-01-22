@@ -1,0 +1,8 @@
+echo "Enter 1st string: " 
+read str1
+echo "Enter 2st string: " 
+read str2 
+res="${str1}${str2}" 
+len=`echo -n $res | wc -m `
+echo "Concatnated string is: ${res}" 
+echo "Length is: ${len}"

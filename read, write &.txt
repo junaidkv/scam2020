@@ -1,0 +1,12 @@
+ls > f
+exec < f
+while read line
+do
+if [ -f $line ]
+then
+if [ -r $line -a -w $line -a -x $line ]
+then
+echo "$line"
+fi
+fi
+done

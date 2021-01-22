@@ -1,0 +1,25 @@
+echo "Usage: ./program.sh word to search file1,file2,file3,...,filen"
+echo
+len=$#
+if [ $len -eq 0 ]
+then
+ echo "please enter a word and atleast a file: "
+ exit 0
+fi
+word=$1
+cnt=0
+c=0
+cnt_word=0
+len=$(($len-1))
+while [ $cnt -ne $len ]
+do
+ if [ $cnt -eq $len ]
+ then
+ exit 0
+ fi
+ shift
+ c=$(grep -c $word $1)
+ cnt_word=$(($cnt_word+$c))
+ cnt=$(($cnt+1))
+done
+echo "There are $cnt_word $word is $len files"

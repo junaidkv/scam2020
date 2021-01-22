@@ -1,0 +1,25 @@
+if [ $# -eq 0 ]
+then
+echo
+echo "Alternate to wc"
+echo "Usage: ./program file_name [N] (N number of lines by default)"
+exit 0
+fi
+w=0
+s=0
+c=0
+string=$(cat $1)
+len=${#string}
+str=($string)
+line=$(sed -n '$=' $1)
+for((i=0; i<${#string}; i++))
+do
+str="${string:$i:1}"
+c=$(($c+1))
+done
+c=$(($c+1))
+w=${#str[@]}
+echo
+echo No of words: $w
+echo No of characters: $c
+echo No of Lines: $line

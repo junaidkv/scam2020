@@ -1,0 +1,21 @@
+CheckNo=`expr $# % 2` 
+if [ $CheckNo -ne 0 ] 
+then
+echo "Enter Even Number Of Arguments." 
+else
+cnt=1
+while [ $cnt -ne $# ];
+do
+if (( $CheckNo>= $# )) 
+then
+echo "Program complete" 
+exit 0
+else
+echo "copying file $1 to file $2" 
+cp $1 $2
+shift 
+shift
+cnt=$(( cnt + 2 )) 
+fi
+done 
+fi

@@ -1,0 +1,30 @@
+echo "Enter the value of n: "
+read n
+echo "Enter the numbers to sort:"
+for(( i=0; i<$n; i++))
+do
+read a[$i]
+done
+echo "The numbers are:"
+for(( i=0; i<$n; i++ ))
+do
+echo ${a[$i]}
+done
+echo "The sorted numbers are:"
+for ((i = 0; i<$n; i++))
+do
+for((j = 0; j<$(( $n-$i-1 )); j++))
+do
+if [ ${a[j]} -gt ${a[$(( j+1 ))]} ]
+then
+ # swap
+temp=${a[j]}
+a[$j]=${a[$((j+1))]}
+a[$(( j+1 ))]=$temp
+fi
+done
+done
+for (( i=0; i < $n; i++ ))
+do
+echo ${a[$i]}
+done

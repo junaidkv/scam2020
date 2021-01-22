@@ -1,0 +1,22 @@
+digitsum()
+{
+ n=$1
+ echo "$n"
+ a=`echo $n|wc -c`
+ a=$(($a-1))
+ if [ $a -ne 5 ]
+ then
+ echo "Enter a five digit number"
+ else
+ sum=0
+ temp=$n
+ while [ $temp -gt 0 ]
+ do
+ rem=$((temp%10))
+ sum=$(($sum+$rem))
+ temp=$(($temp/10))
+ done
+ echo "Sum of digits of $n is $sum"
+ fi
+}
+digitsum 12345

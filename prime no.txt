@@ -1,0 +1,19 @@
+#check wether a number is prime or not.
+echo "Enter a number: "
+read n
+f=0
+i=`expr $n / 2`
+for((j=2; j<=$i; j++))
+do
+if [ `expr $n % $j` -eq 0 ]
+then
+f=1
+break
+fi
+done
+if [ $f -eq 0 ]
+then
+echo "$n is PRIME"
+else
+echo "$n is NOT PRIME"
+fi

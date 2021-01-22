@@ -1,0 +1,31 @@
+echo "---operations---"
+echo -e "1. Enter the sentence in a file \n2. Search a given word in the existing file \n3.
+Quit"
+read ans
+case $ans in
+1) echo "Enter the file name: "
+read f1
+echo "Enter the sentence: "
+read sen
+echo $sen | cat >> $f1
+;;
+2) echo "Enter the file name: "
+read f1
+if test -e $f1
+then
+echo "Enter the word that is to be searched: "
+read word
+a=`grep -o "$word" $f1 | wc -w`
+if [ $a -gt0 ]
+then
+echo "Word found"
+else
+echo "Word not found"
+fi
+else
+echo "The file does not exists"
+fi
+;;
+3) exit ;;
+*) echo "Enter valid option"
+esac

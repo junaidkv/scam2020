@@ -1,0 +1,22 @@
+if [ $# -eq 0 ]
+then
+echo
+echo "Alternate to HEAD"
+echo "Usage: ./prgram.sh file_name [N] (N= nuber of lines to display 10 by default)"
+exit 0
+fi
+if [ $# -eq 1 ]
+then
+sed -n "1,10p"<$1
+exit 0
+fi
+if [ $# -eq 2 ]
+then
+if ![[ $2=~^[0-9]+$]]
+then
+echo "Please enter number of lines as integer"
+exit 0
+fi
+c=$
+sed -n "1,$2p"<$1
+fi
